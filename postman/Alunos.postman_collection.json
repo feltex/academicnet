@@ -1,0 +1,178 @@
+{
+	"info": {
+		"_postman_id": "6a7c7e3f-8743-4667-88b0-fc5db651644e",
+		"name": "Alunos",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Listar Alunos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/alunos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"alunos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Aluno",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Verificar os dados recebidos\", () => {",
+							"   pm.expect(pm.response.code).to.equal(200);",
+							"   const alunoJson = pm.response.json();",
+							"   pm.expect(alunoJson.matricula).to.equal(444);",
+							"   pm.expect(alunoJson.email).to.equal(\"josesilva@feltex.com.br\");",
+							"",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/alunos/444",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"alunos",
+						"444"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Incluir Aluno",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\n  \"matricula\" : 123,\n  \"nome\" : \"Maria Santos e Souza\",\n  \"telefone\": \"1234-56789\",\n  \"email\":  \"maria@feltex.com.br\",\n  \"dataCadastro\": \"2021-05-11T10:19:14.0Z\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/alunos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"alunos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Incluir outro Aluno",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\n  \"matricula\" : 444,\n  \"nome\" : \"Jose da Silva\",\n  \"telefone\": \"7777-8888\",\n  \"email\":  \"josesilva@feltex.com.br\",\n  \"dataCadastro\": \"2021-05-11T06:19:14.0Z\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/alunos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"alunos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Alterar Aluno",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\n  \"matricula\" : 123,\n  \"nome\" : \"Maria Santos e Souza - Alterado\",\n  \"telefone\": \"1234-0000\",\n  \"email\":  \"maria@feltex.com.br\",\n  \"dataCadastro\": \"2021-05-11T10:19:14.0Z\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/alunos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"alunos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Aluno",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/alunos/123",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"alunos",
+						"123"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

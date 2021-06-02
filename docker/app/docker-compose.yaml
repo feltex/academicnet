@@ -1,0 +1,24 @@
+version: '3.8'
+
+services:
+  mysql-db:
+    image: mysql:8.0
+    container_name: academicnet-mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: senha01
+      MYSQL_DATABASE: academicnetDB
+    ports:
+    - "3306:3306"
+    cap_add:
+      - SYS_NICE
+  app:
+    image: andrefelix/academicnet:V1
+    container_name: academicnet_app
+    depends_on:
+      - mysql-db
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql-db:3306/academicnetDB
+      HABILITAR_CARREGAR_MASSA_DADOS: 'false'
+    ports:
+     - "9090:8080"  # host:container

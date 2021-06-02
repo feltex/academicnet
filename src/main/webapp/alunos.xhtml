@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html
+        xmlns:h="http://xmlns.jcp.org/jsf/html"
+        xmlns:p="http://primefaces.org/ui"
+        xml:lang="en"
+        xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+    <script type="text/javascript">
+        //<![CDATA[
+        function start() {
+            PF('statusDialog').show();
+        }
+
+        function stop() {
+            PF('statusDialog').hide();
+        }
+
+        //]]>
+    </script>
+    <title>Lista de Alunos</title>
+</h:head>
+<f:view>
+    <p:dialog modal="true" widgetVar="statusDialog" header="Status" draggable="false" closable="false"
+              resizable="false">
+        <p:graphicImage name="/images/ajaxloadingbar.gif"/>
+    </p:dialog>
+    <p:ajaxStatus onstart="PF('statusDialog').show()" onsuccess="PF('statusDialog').hide()"/>
+    <h:body>
+        <h:form id="formAlunos" prependId="false">
+            <h:commandLink action="#{alunoMB.listarTodos}" value="Recarregar a listagem!" >
+                <p:graphicImage name="/images/refresh.png" alt="Recarregar listagem!" width="24"/>
+            </h:commandLink>
+            <p:growl id="mensagens" showDetail="true" autoUpdate="true" closable="true">
+                <p:autoUpdate/>
+            </p:growl>
+            <p:dataTable id="tabelaAluno" var="item" value="#{alunoMB.alunos}" prependId="false"
+                         paginator="true" rows="25" emptyMessage="Não há alunos cadastrados."
+                         rowKey="#{item.matricula}" selectionMode="single"
+                         paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink}
+                         {RowsPerPageDropdown} {Exporters}"
+                         selection="#{alunoMB.aluno}"
+                         rowsPerPageTemplate="10,15,25,50,100">
+                <f:facet name="{Exporters}">
+                    <h:commandLink id="exportExcel">
+                        <p:graphicImage name="/images/excel.png" width="24"/>
+                        <p:dataExporter type="xls" target="tabelaAluno" fileName="listaAlunos"/>
+                    </h:commandLink>
+                    <h:commandLink id="exportPDF">
+                        <p:graphicImage name="/images/pdf.png" width="24"/>
+                        <p:dataExporter type="pdf" target="tabelaAluno" fileName="listaAlunos"/>
+                    </h:commandLink>
+                    <h:commandLink id="exportCSV">
+                        <p:graphicImage name="/images/csv.png" width="24"/>
+                        <p:dataExporter type="csv" target="tabelaAluno" fileName="listaAlunos"/>
+                    </h:commandLink>
+                    <h:commandLink id="exportXML">
+                        <p:graphicImage name="/images/xml.png" width="24"/>
+                        <p:dataExporter type="xml" target="tabelaAluno" fileName="listaAlunos"/>
+                    </h:commandLink>
+                </f:facet>
+
+                <f:facet name="header"><p:outputLabel value="Lista de Alunos: #{alunoMB.tamanhoDaLista}"/> </f:facet>
+                <p:column headerText="Matricula" style="width: 6%;" sortBy="#{item.matricula}"
+                          filterMatchMode="contains"
+                          filterBy="#{item.matricula}">
+                    <h:outputText id="outputMatricula"
+                                  value="#{item.matricula}"/>
+                </p:column>
+                <p:column headerText="Nome" style="width: 25%;" sortBy="#{item.nome}"
+                          filterMatchMode="contains"
+                          filterBy="#{item.nome}">
+                    <h:outputText id="outputNome"
+                                  value="#{item.nome}"/>
+                </p:column>
+                <p:column headerText="Email" style="width: 10%;" sortBy="#{item.email}" filterBy="#{item.email}">
+                    <h:outputText value="#{item.email}"/>
+                </p:column>
+                <p:column headerText="Telefone" style="width: 10%;" sortBy="#{item.telefone}"
+                          filterBy="#{item.telefone}">
+                    <h:outputText value="#{item.telefone}"/>
+                </p:column>
+                <p:column headerText="Data Cadastro" style="width: 15%;" sortBy="#{item.dataCadastro}"
+                          filterBy="#{item.dataCadastro}">
+                    <h:outputText value="#{item.dataCadastro}"/>
+                </p:column>
+                <p:column style="width:10%;text-align: center" headerText="Acoes" exportable="false">
+                    <p:commandButton update=":formAlunos:alunoDetail" oncomplete="PF('itemDialog').show()"
+                                     icon="ui-icon-search"
+                                     title="Detalhe">
+                        <f:setPropertyActionListener value="#{item}" target="#{alunoMB.aluno}"/>
+                    </p:commandButton>
+                </p:column>
+            </p:dataTable>
+            <p:dialog header="Detalhes do Aluno" widgetVar="itemDialog" modal="true" showEffect="fade" hideEffect="fade"
+                      resizable="false">
+                <p:outputPanel id="alunoDetail" style="text-align:center;">
+                    <p:panelGrid columns="2" rendered="#{not empty alunoMB.aluno}" columnClasses="label,value">
+                        <f:facet name="header">
+                            <h:outputLabel>Aluno</h:outputLabel>
+                        </f:facet>
+
+                        <h:outputText value="Matricula"/>
+                        <h:inputText value="#{alunoMB.aluno.matricula}" disabled="#{true}"/>
+
+                        <h:outputText value="Nome"/>
+                        <h:inputText value="#{alunoMB.aluno.nome}" disabled="true"/>
+
+                        <h:outputText value="Email"/>
+                        <h:inputText value="#{alunoMB.aluno.email}" disabled="true"/>
+
+                        <h:outputText value="Telefone"/>
+                        <h:inputText value="#{alunoMB.aluno.telefone}" disabled="true"/>
+
+                        <h:outputText value="Data Cadastro"/>
+                        <h:outputText value="#{alunoMB.aluno.dataCadastro}"/>
+
+                    </p:panelGrid>
+                    <p:panelGrid columns="2" columnClasses="label,value">
+                        <p:button id="btnFechar" value="Fechar" icon="ui-icon-plusthick"/>
+                    </p:panelGrid>
+                </p:outputPanel>
+            </p:dialog>
+        </h:form>
+    </h:body>
+</f:view>
+</html>
