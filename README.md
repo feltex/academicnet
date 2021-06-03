@@ -4,12 +4,14 @@
 ## Vídeos desta série
 
 ## Spring Boot
-- SPRING  BOOT uma aplicação completa - Parte 1 Criando o projeto - https://youtu.be/WKL_BrUfe9Q
-- SPRING  BOOT uma aplicação completa Parte2 - https://youtu.be/74-eFku7XQE
-- SPRING  BOOT uma aplicação completa - Parte3 usando o Postman - https://youtu.be/tWGi_QKdGHo
-- SPRING  BOOT uma aplicação completa - Vamos usar o Mysql - https://youtu.be/qHpjK3wNjxs
-- SPRING BOOT uma aplicação completa - Utilizando o primefaces - https://youtu.be/GHQX3H_hfyw
-- SPRING  BOOT uma aplicação completa - Testes automáticos - https://youtu.be/SBvKXe2pk8w
+- SPRING BOOT uma aplicação completa | Criando o projeto - https://youtu.be/WKL_BrUfe9Q
+- SPRING BOOT uma aplicação completa | https://youtu.be/74-eFku7XQE
+- SPRING BOOT uma aplicação completa | usando o Postman - https://youtu.be/tWGi_QKdGHo
+- SPRING BOOT uma aplicação completa | Vamos usar o Mysql - https://youtu.be/qHpjK3wNjxs
+- SPRING BOOT uma aplicação completa | Utilizando o primefaces - https://youtu.be/GHQX3H_hfyw
+- SPRING BOOT uma aplicação completa | Testes automáticos - https://youtu.be/SBvKXe2pk8w
+- SPRING BOOT uma aplicação completa | Como usar o docker - https://www.youtube.com/watch?v=qRBw_XKU8CE
+- SPRING BOOT uma aplicação completa | Deploy na Amazon Web Services - https://youtu.be/qRBw_XKU8CE
 
 
 ## Pré-requisitos
