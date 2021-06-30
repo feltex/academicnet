@@ -1,4 +1,4 @@
-FROM adoptopenjdk/openjdk11:jre-11.0.11_9-alpine
+FROM openjdk:11.0.11-9-jdk
 
 ADD target/academicnet.war app.war
 
