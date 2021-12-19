@@ -14,6 +14,6 @@ public class Status {
 
     @GetMapping
     public String status() throws UnknownHostException {
-        return "AcademicNet rodando " + Instant.now() + " Servidor [" + InetAddress.getLocalHost() +"]";
+        return "V3 - AcademicNet rodando " + Instant.now() + " Servidor [" + InetAddress.getLocalHost() +"]";
     }
 }

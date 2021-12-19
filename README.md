@@ -45,6 +45,18 @@ mvn spring-boot:run
 
 ```
 
+## Criar a imagem Docker
+
+```
+
+docker build -t <usuario-docker-hub>/academicnet:V3 .
+
+docker push <usuario-docker-hub>/academicnet:V3
+
+```
+
+
+
 
 ## Vídeos de apoio do Canal 
 

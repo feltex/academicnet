@@ -13,7 +13,7 @@ https://docs.aws.amazon.com/pt_br/elasticbeanstalk/latest/dg/eb-cli3-install.htm
 
 ```eb init```
 
-```eb create env-dev --single --database --database.engine mysql -db.user ebroot -db.pass Passw0rd01```
+```eb create env-dev --database --database.engine mysql -db.user ebroot -db.pass Passw0rd01```
 
 ### Criando a aplicação
 
