@@ -10,7 +10,7 @@
 - SPRING BOOT uma aplicação completa | Vamos usar o Mysql - https://youtu.be/qHpjK3wNjxs
 - SPRING BOOT uma aplicação completa | Utilizando o primefaces - https://youtu.be/GHQX3H_hfyw
 - SPRING BOOT uma aplicação completa | Testes automáticos - https://youtu.be/SBvKXe2pk8w
-- SPRING BOOT uma aplicação completa | Como usar o docker - https://www.youtube.com/watch?v=qRBw_XKU8CE
+- SPRING BOOT uma aplicação completa | Como usar o docker - https://youtu.be/KynRfzk23Jc
 - SPRING BOOT uma aplicação completa | Deploy na Amazon Web Services - https://youtu.be/qRBw_XKU8CE
 
 
