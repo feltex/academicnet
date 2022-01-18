@@ -1,6 +1,11 @@
 # academicnet
 
 
+![AcademicNet](https://github.com/feltex/academicnet/blob/main/AcademicNet.png)
+
+
+
+
 ## Vídeos desta série
 
 ## Spring Boot
