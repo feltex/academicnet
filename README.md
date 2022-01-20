@@ -1,5 +1,7 @@
 # academicnet
 
+  Sistema de controle acadêmico simples onde aplicamos os conceitos de desenvolvimento de sistemas utilizando a linguagem Java.
+
 
 ![AcademicNet](https://github.com/feltex/academicnet/blob/main/AcademicNet.png)
 
@@ -82,5 +84,5 @@ docker push <usuario-docker-hub>/academicnet:V3
     https://maven.apache.org/download.cgi
     
 - Banco de Dados MySQL
-    - Como instalar o Docker - MySLQ usando Docker -  Docker
+    - Como instalar o Docker - MySQL usando Docker -  Docker
     - Docker-Compose - https://www.youtube.com/watch?v=vramc8g9h_s&t=2s
