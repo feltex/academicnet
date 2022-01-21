@@ -15,6 +15,7 @@ services:
   app:
     image: andrefelix/academicnet:V1
     container_name: academicnet_app
+    restart: always    
     depends_on:
       - mysql-db
     environment:
