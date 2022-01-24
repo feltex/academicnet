@@ -1,18 +1,21 @@
 # academicnet
 
-  Sistema de controle acadêmico simples onde aplicamos os conceitos de desenvolvimento de sistemas utilizando a linguagem Java.
+  Sistema de controle acadêmico simples. Nele criamos uma API Rest em Java que permite fazer o CRUD de alunos utilizando
+  Spring Boot. Além disso, temos também uma tela de consulta de alunos onde podemos exportar os dados em Excel, PDF, CSV
+  e XML.
+
+  Este projeto é utilizado no canal [feltex](https://www.youtube.com/feltexbr) para exemplos práticos de Java.
 
 
-![AcademicNet](https://github.com/feltex/academicnet/blob/main/AcademicNet.png)
-
-
+![AcademicNet](AcademicNet.png)
 
 
 ## Vídeos desta série
 
+
 ## Spring Boot
 - SPRING BOOT uma aplicação completa | Criando o projeto - https://youtu.be/WKL_BrUfe9Q
-- SPRING BOOT uma aplicação completa | https://youtu.be/74-eFku7XQE
+- SPRING BOOT uma aplicação completa | Validando a API - https://youtu.be/74-eFku7XQE
 - SPRING BOOT uma aplicação completa | usando o Postman - https://youtu.be/tWGi_QKdGHo
 - SPRING BOOT uma aplicação completa | Vamos usar o Mysql - https://youtu.be/qHpjK3wNjxs
 - SPRING BOOT uma aplicação completa | Utilizando o primefaces - https://youtu.be/GHQX3H_hfyw
@@ -27,8 +30,7 @@
 1. Maven
 1. IDE (Intellij ou Eclipse)
 1. MySQL
-
-
+1. Postman
 
 ### Iniciando o banco de Dados
 
@@ -42,15 +44,23 @@ docker-compose up
 
 ## Comandos do Maven
 
-``` mvn clean install```
+Instalando as dependências da aplicação
 
-## Iniciando a aplicacao
+- `mvn clean install`
 
-```
+Executando os testes
+- `mvn clean test`
 
-mvn spring-boot:run
+## Iniciando a aplicação
 
-```
+Usando o maven
+
+- `mvn spring-boot:run`
+
+Usando Java
+
+- `java -jar target/academicnet.war` 
+
 
 ## Criar a imagem Docker
 
@@ -61,9 +71,6 @@ docker build -t <usuario-docker-hub>/academicnet:V3 .
 docker push <usuario-docker-hub>/academicnet:V3
 
 ```
-
-
-
 
 ## Vídeos de apoio do Canal 
 
