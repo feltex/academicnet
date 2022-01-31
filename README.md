@@ -26,11 +26,12 @@
 
 ## Pré-requisitos
 
-1. Java
-1. Maven
-1. IDE (Intellij ou Eclipse)
-1. MySQL
-1. Postman
+1. [Java](https://youtu.be/_NCt_82M0MA)
+1. [Maven](https://youtu.be/P29usdprI-E)
+1. IDE [Intellij](https://youtu.be/Wsm3lbY8_bI) ou [Eclipse](https://youtu.be/veXmZJdyouQ)
+1. [MySQL](https://youtu.be/vramc8g9h_s)
+1. [Postman](https://youtu.be/tWGi_QKdGHo)
+
 
 ### Iniciando o banco de Dados
 
