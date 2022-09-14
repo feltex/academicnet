@@ -94,3 +94,8 @@ docker push <usuario-docker-hub>/academicnet:V3
 - Banco de Dados MySQL
     - Como instalar o Docker - MySQL usando Docker -  Docker
     - Docker-Compose - https://www.youtube.com/watch?v=vramc8g9h_s&t=2s
+
+
+### Infrastructure model
+
+![Infrastructure model](.infragenie/infrastructure_model.png)
