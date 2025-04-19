@@ -63,6 +63,13 @@ Usando Java
 - `java -jar target/academicnet.war` 
 
 
+## Acesse: 
+
+- [api](http://localhost:9090/alunos)
+  
+- [UI Primefaces](http://localhost:9090/alunos.jr)
+
+
 ## Criar a imagem Docker
 
 ```
